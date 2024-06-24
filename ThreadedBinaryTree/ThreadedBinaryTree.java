@@ -145,7 +145,6 @@ public class ThreadedBinaryTree {
             }
     }
 
-
     public boolean delete(int data) {
         if (root == null) {
             return false;
@@ -181,33 +180,27 @@ public class ThreadedBinaryTree {
             }
         }
 
-        while(true)
-        {
+        while (true) {
             // Step 2
-            // check if deletable node is the terminal node 
-            if(del.getLflag() == 'T' && del.getRflag() == 'T')
-            {
-                if(parent.getLeft() == del)
-                {
+            // check if deletable node is the terminal node
+            if (del.getLflag() == 'T' && del.getRflag() == 'T') {
+                if (parent.getLeft() == del) {
                     parent.setLeft(del.getLeft());
                     parent.setLflag('T');
-                }
-                else{
+                } else {
                     parent.setRight(del.getRight());
                     parent.setRflag('T');
                 }
                 return true;
             }
 
-            //Step 3
+            // Step 3
             // check if it is not terminal node
-            if(del.getLflag() == 'L')
-            {
+            if (del.getLflag() == 'L') {
                 Node max = del.getLeft();
                 parent = del;
 
-                while(max.getRflag() == 'L')
-                {
+                while (max.getRflag() == 'L') {
                     parent = max;
                     max = max.getRight();
                 }
@@ -215,13 +208,12 @@ public class ThreadedBinaryTree {
                 int temp = del.getData();
                 del.setData(max.getData());
                 max.setData(temp);
-                
-                del = max;
-            }else{
-                Node min= del.getRight();
 
-                while(min.getLflag() == 'L')
-                {
+                del = max;
+            } else {
+                Node min = del.getRight();
+
+                while (min.getLflag() == 'L') {
                     parent = min;
                     min = min.getLeft();
                 }
@@ -237,7 +229,6 @@ public class ThreadedBinaryTree {
 
     }
 
-    
     // public boolean delete(int data) {
     // // if root is null then delete it
     // if (root == null) {

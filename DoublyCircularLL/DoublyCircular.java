@@ -1,4 +1,4 @@
-package DCL;
+package DoublyCircularLL;
 
 public class DoublyCircular {
     private Node head;

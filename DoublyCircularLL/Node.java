@@ -1,4 +1,4 @@
-package DCL;
+package DoublyCircularLL;
 
 public class Node {
     private int data; 
