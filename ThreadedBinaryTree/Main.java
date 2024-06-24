@@ -15,5 +15,9 @@ public class Main {
         t1.inOrder();
         t1.preOrder();
         t1.postOrder();
+        t1.delete(50);
+        t1.inOrder();
+        t1.delete(20);
+        t1.inOrder();
     }
 }
